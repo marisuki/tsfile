@@ -1,0 +1,20 @@
+{
+  "@parameters": {
+    "required": [
+    "final int num = (((int) data[0] & 0xFF) << 24) | (((int) data[1] & 0xFF) << 16) | (((int) data[2] & 0xFF) << 8) | ((int) data[3] & 0xFF);",
+    "final int width = (((int) data[4] & 0xFF) << 24) | (((int) data[5] & 0xFF) << 16) | (((int) data[6] & 0xFF) << 8) | ((int) data[7] & 0xFF);",
+    "final int minDeltaBase = (((int) data[8] & 0xFF) << 24) | (((int) data[9] & 0xFF) << 16) | (((int) data[10] & 0xFF) << 8) | ((int) data[11] & 0xFF);",
+    "final int first = (((int) data[12] & 0xFF) << 24) | (((int) data[13] & 0xFF) << 16) | (((int) data[14] & 0xFF) << 8) | ((int) data[15] & 0xFF);"
+  ]},
+  "@before": {
+    "required":[
+      "int[] tar = new int[num+1];"
+    ]
+  },
+  "@body": {
+    "l0": {
+      "loop": "for(int i=0;i<num;i++) { \n %s }",
+      "switch": "switch()"
+    }
+  }
+}
